@@ -1,38 +1,40 @@
 # Home-Manager
 
-> This is my personal NixOS HM configuration with minimal packages, optimal configurations, and clean code (or at least i try)
+> Projek line follower untuk kompetisi Medan Coding 2026
 
 ## 💻 Technologies ✨
 
-- [`Git`](https://nix-community.github.io/home-manager/) -> Version control yang digunakan
+- [`Git`](https://git-scm.com) -> Version control yang digunakan
 
-- [`Platform.io`](https://nix-community.github.io/home-manager/) -> Software untuk flash dan monitor microcontroller
+- [`Platform.io`](https://platformio.org) -> Software untuk flash dan monitor microcontroller
 
-- [`C++`](https://nix-community.github.io/home-manager/) -> Programming language yang digunakan
+- `C++` -> Programming language yang digunakan
 
-- [`Neovim`](https://nix-community.github.io/home-manager/) -> Texteditor yang digunakan
+- [`Neovim`](https://neovim.io) -> Texteditor yang digunakan
 
-- [`Proportional-Integral-Derivative`](https://nix-community.github.io/home-manager/) -> Feedback loop mechanism
+- [`Proportional-Integral-Derivative`](https://https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_controller) -> Feedback loop mechanism
 
-- [`ESP32`](https://nix-community.github.io/home-manager/) -> Microcontroller yang digunakan
+- [`ESP32`](https://www.espressif.com/en/products/socs/ESP32) -> Microcontroller yang digunakan
 
-- [`L298N Motor Driver`](https://nix-community.github.io/home-manager/) -> Motor Driver H-Bridge yang digunakan
+- [`L298N Motor Driver`](https://components101.com/modules/l293n-motor-driver-module) -> Motor Driver H-Bridge yang digunakan
 
-- [`Dinamo Generic`](https://nix-community.github.io/home-manager/) -> Hardware untuk menggerakkan motor
+- `Dinamo Generic` -> Hardware untuk menggerakkan motor
 
-- [`ESP32 30pin Extension Board`](https://nix-community.github.io/home-manager/) -> Hardware untuk menambah pin yang ada di ESP32
+- `ESP32 30pin Extension Board` -> Hardware untuk menambah pin yang ada di ESP32
 
-- [`Baterai 18650 3x`](https://nix-community.github.io/home-manager/) -> Baterai yang digunakan untuk robot line follower
+- `Baterai 18650 3x` -> Baterai yang digunakan untuk robot line follower
 
-- [`REES52 Infrared Sensor 5x`](https://nix-community.github.io/home-manager/) -> Sensor infrared yang digunakan untuk mendeteksi garis
+- `Infrared Sensor 5x` -> Sensor infrared yang digunakan untuk mendeteksi garis
 
-- [`Kabel jumper, Breadboard, dan semacamnya`](https://nix-community.github.io/home-manager/) -> Hardware yang digunakan untuk wiring dan semacamnya
+- `Kabel jumper, Breadboard, dan semacamnya` -> Hardware yang digunakan untuk wiring dan semacamnya
 
-- [`Chassis robot 2wd`](https://nix-community.github.io/home-manager/) -> Chassis yang digunakan untuk line follower
+- [`Chassis robot 2wd`](https://components101.com/modules/l293n-motor-driver-module) -> Chassis yang digunakan untuk line follower
 
 ## 🪐 Features 🦄
 
-Every apps are configured in their own file. For example, the hyprland config is stored neatly in modules/hyprland.nix and same goes for other apps. This allows for a more clean code enviorement and easier code to debug in general
+- Menggunakan 5 IR sensor sebagai alternatif dari IR array sensor yang memiliki harga yang cukup mahal
+
+- Menggunakan Teknologi Proportional-Integral-Derivative (PID) yaitu mekanisma feedback loop yang mengkakulasikan corrections berdasarkan error antara posisi yang diinginkan dan posisi nyata. Untuk kasus line follower ini, PID digunakan untuk terus menerus mengoreksi kecepatan motor untuk menjaga robot tetap berada di tengah garis
 
 ## ⌨️ Keyboard Shortcuts 💨
 
