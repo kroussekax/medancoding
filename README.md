@@ -36,9 +36,17 @@
 
 - Menggunakan Teknologi Proportional-Integral-Derivative (PID) yaitu mekanisma feedback loop yang mengkakulasikan corrections berdasarkan error antara posisi yang diinginkan dan posisi nyata. Untuk kasus line follower ini, PID digunakan untuk terus menerus mengoreksi kecepatan motor untuk menjaga robot tetap berada di tengah garis
 
-## ⌨️ Keyboard Shortcuts 💨
+- 
 
-The majority of shortcuts can be found in modules/hyprland.nix. I purposely made them vim based because thats just what I'm used to. Altough. there are in fact issues with conflicting keybinds between hyprland and ambxst. 
+## ⌨️ How to Make 💨
+
+- Assembly chassis, roda, dan motor.
+
+- Tempel busa di bawah motor driver, ESP extension pin, dan socket battery sebagai safety meassure. Tempel motor driver di antara motor, ESP di depannya, battery socket di depannya. Terakhir, tempel dua breadboard bagian sampingnya (+ dan -) di samping kanan kiri battery socket sekalian baterainya. Tempel 5 IR sensor di paling depan chassis
+
+- Flash code dari src/ ke ESP32 dengan USB type C.
+
+- Enjoy !!!
 
 ## ⏰ The Process ‼️
 
