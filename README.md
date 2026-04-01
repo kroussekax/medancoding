@@ -36,7 +36,18 @@
 
 - Menggunakan Teknologi Proportional-Integral-Derivative (PID) yaitu mekanisma feedback loop yang mengkakulasikan corrections berdasarkan error antara posisi yang diinginkan dan posisi nyata. Untuk kasus line follower ini, PID digunakan untuk terus menerus mengoreksi kecepatan motor untuk menjaga robot tetap berada di tengah garis
 
-- 
+- Menggunakan fungsi bluetooth untuk mengkonfigurasikan variabel seperti KD, KP, KI, dan kecepatan motor kanan serta kiri.
+
+## 💻 Cara Kerja 💻
+
+Projek line follower berbasis PID ini secara keseluruhan, memiliki alur yaitu: membaca sensor, menghitung error dari posisi garis, memprosesnya dengan PID, lalu mengatur kecepatan motor kiri dan kanan agar robot tetap berada di jalur.
+
+Di bagian setupm kita meng-initialize beberapa variabel dan memulai serial bluetooth "esp32". semua pin juga akan diatur sebagai output maupun input. pwm atau ledc juga disiapkan untuk mengatur kecepatan motor.
+
+Di bagian loop, program kita berjalan terus-menerus. Program akan menghitung selisih waktu sejak loop sebelumnya yang disebut dt / delta time. nilai ini penting untuk menghitung PID, di bagian derivative dan integralnya. Di loop ini juga program akan membaca data yang masuk dari bluetooth, memprosesnya, dan menghitung kecepatan motor sesuai code pid dan error calculation dengan kd, kp, ki sebagai konstanta. 
+
+Code calculate_error akan menghitung kelima sensor IR dan dimana jika errornya berada di kiri akan menghasilkan -2 sampai -1 dan error di bagian kanan akan menghasilkan 1 sampai 2. Setelah itu, calculate_pid akan menghitung output pid dengan mengalikan error, integral, dan derivative ke kp, ki, dan kd dan menjumlahkannya. ( (constants[KP] * error) + (constants[KI] * integral) + (constants[KD] * derivative) ). Akhirnya, kita memanggil motor_both_wheel dengan kecepatan yaitu (kecepatan_dasar - PID) (+ jika motor kanan). Kita juga perlu menggunakan constrain() untuk mengcap value kecepatan kanan kiri ini dari -255 ke 255.
+
 
 ## ⌨️ How to Make 💨
 
