@@ -1,11 +1,16 @@
 import serial
+import sys
 
-bt = serial.Serial('COM6', 115200)  # change to your COM port
+if len(sys.argv) < 4:
+    print(f"Usage: python {sys.argv[0]} <port> <command> <value>")
+    print(f"Example: python {sys.argv[0]} /dev/rfcomm0 1 25")
+    sys.exit(1)
 
-def send_command(command, value):
-    bt.write(bytes([command, value]))
+port    = sys.argv[1]
+command = int(sys.argv[2])
+value   = int(sys.argv[3])
 
-send_command(1, 25)   # Set Kp = 25
-send_command(3, 10)   # Set Ki = 10
-send_command(5, 8)    # Set Kd = 8
-send_command(7, 1)    # Turn robot ON
+bt = serial.Serial(port, 115200)
+bt.write(bytes([command, value]))
+print(f"Sent command={command} value={value} to {port}")
+bt.close()
