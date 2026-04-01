@@ -32,6 +32,8 @@
 
 ## 🪐 Features 🦄
 
+- Fitur utama yaitu kemampuan mengikuti garis dan mengatur kecepatan motor sesuai posisi garis (line following)
+
 - Menggunakan 5 IR sensor sebagai alternatif dari IR array sensor yang memiliki harga yang cukup mahal
 
 - Menggunakan Teknologi Proportional-Integral-Derivative (PID) yaitu mekanisma feedback loop yang mengkakulasikan corrections berdasarkan error antara posisi yang diinginkan dan posisi nyata. Untuk kasus line follower ini, PID digunakan untuk terus menerus mengoreksi kecepatan motor untuk menjaga robot tetap berada di tengah garis
@@ -58,10 +60,3 @@ Code calculate_error akan menghitung kelima sensor IR dan dimana jika errornya b
 - Flash code dari src/ ke ESP32 dengan USB type C.
 
 - Enjoy !!!
-
-## ⏰ The Process ‼️
-
-I started using Nix right around the end of 2025 and immidietly tried out HomeManager. I fell in love with the concept and continuesly use it until now. There has been issues like the learning curve but I think it's all very worthi t. I can't imagine a life without Nix and/or HomeManager. The biggest and most noticable part of this HM config is ofcourse its hyprland config. I'm using a slightly modifed version of Axenide/ambxst for the hyprland shell and its just amaaxing. Althought, there was some isseus with conflicting apps and ongoing issues with conflicting keybinds
-
-## 📔 What I Learned 🧠
-
