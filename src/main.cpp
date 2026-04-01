@@ -93,6 +93,10 @@ void setup() {
   lsp_base = 150;
   rsp_base = 150;
 
+  constants[KI] = 0;
+  constants[KD] = 0;
+  constants[KP] = 1;
+
   delay(1000);
 }
 
@@ -170,7 +174,7 @@ float calculate_pid(float dt) {
 
 void motor_code(float dt) {
 	float lsp = lsp_base - calculate_pid(dt);
-	float rsp = lsp_base + calculate_pid(dt);
+	float rsp = rsp_base + calculate_pid(dt);
     if (lsp > 255) {
       lsp = 255;
     }
